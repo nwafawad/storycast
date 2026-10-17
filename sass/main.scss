@@ -1,0 +1,272 @@
+@use "colors";
+@use "typography";
+@use "spacing";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  a:focus-visible {
+  outline: 3px solid colors.$accent;
+  outline-offset: 4px;
+}
+
+  body {
+    margin: 0;
+    background-color: colors.$background;
+    color: colors.$text;
+    font-family: typography.$font-family;
+    font-size: typography.$size-body;
+    line-height: typography.$line-height-body;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+h1,
+h2,
+h3 {
+  line-height: typography.$line-height-heading;
+}
+
+h1 {
+  font-size: typography.$size-hero;
+}
+
+h2 {
+  font-size: typography.$size-heading;
+}
+
+small,
+figcaption {
+  font-size: typography.$size-small;
+}
+
+.container {
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: spacing.$xl;
+}
+}
+
+@layer components {
+  .site-header, .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: spacing.$md;
+    padding: spacing.$md spacing.$xl;
+  }
+
+  .site-header__brand, .site-footer__brand {
+    color: colors.$text;
+    font-size: typography.$size-heading;
+    text-decoration: none;
+  }
+
+  .site-header__nav ul,
+  .site-footer__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacing.$lg;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-header__nav a,
+  .site-footer__nav a {
+    color: colors.$text;
+    text-decoration: none;
+  }
+
+  .site-header__nav a:hover,
+  .site-footer__nav a:hover {
+    text-decoration: underline;
+  }
+
+  .hero {
+  padding-block: spacing.$xxl;
+  color: white;
+
+  background-image: url("../assets/images/hero_mountain.png");
+  background-color: rgb(0 0 0 / 35%);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  min-height: 25rem;
+}
+
+.hero__title {
+  margin: 0 0 spacing.$sm;
+}
+
+.hero p {
+  max-width: 40ch;
+  margin: spacing.$sm 0;
+}
+.culture {
+  padding-block: spacing.$xl spacing.$xxl;
+}
+
+.culture h2 {
+  margin-top: 0;
+}
+
+.culture__audio {
+  display: block;
+  width: 100%;
+  margin-top: spacing.$xl;
+}
+.music {
+  padding-block: spacing.$xl spacing.$xxl;
+  container-type: inline-size;
+}
+
+.music h2 {
+  color: colors.$accent;
+}
+
+.story-card {
+  display: grid;
+  gap: spacing.$xl;
+}
+
+.story-card__figure, .landscapes__figure {
+  margin: 0;
+}
+
+.story-card__figure img {
+  width: 100%;
+}
+
+.story-card__content {
+   align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card__content .button {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.story-card__content h3 {
+  margin-top: 0;
+}
+
+@container (min-width: 40rem) {
+  .story-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: spacing.$sm spacing.$md;
+  background-color: colors.$accent;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+.landscapes {
+  padding-bottom: spacing.$xxl;
+}
+
+.landscapes h2 {
+  color: colors.$accent;
+}
+
+.landscapes__figure img {
+  width: 100%;
+}
+
+.landscapes__figure figcaption {
+  margin-top: spacing.$sm;
+}
+
+.story-intro {
+  padding-block: spacing.$xxl;
+}
+
+.video-section {
+  container-type: inline-size;
+  padding-block: spacing.$xl spacing.$xxl;
+}
+
+.video-section h2 {
+  color: colors.$accent;
+}
+
+.story__video {
+  aspect-ratio: 16 / 9;
+  align-self: start;
+}
+
+.story__video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.story-card__description {
+  max-height: 12rem;
+  overflow-y: auto;
+  padding: spacing.$sm;
+}
+
+.story-card__description:focus-visible {
+  outline: 3px solid colors.$accent;
+  outline-offset: 2px;}
+
+
+.story-card__details {
+  margin-bottom: spacing.$lg;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: spacing.$lg;
+  padding: spacing.$sm spacing.$md;
+  border: 1px solid colors.$accent;
+  color: colors.$accent;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  background-color: colors.$accent;
+  color: white;
+}
+.about {
+  max-width: 55rem;
+  padding-bottom: spacing.$xxl;
+}
+.culture__transcript {
+  margin-top: spacing.$lg;
+}
+
+.culture__transcript summary {
+  cursor: pointer;
+  color: colors.$accent;
+  text-decoration: underline;
+}
+
+.culture__transcript summary:focus-visible {
+  outline: 3px solid colors.$accent;
+  outline-offset: 4px;
+}
+
+.culture__transcript-text {
+  padding-block: spacing.$md;
+}
+}

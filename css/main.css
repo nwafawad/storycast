@@ -1,0 +1,225 @@
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  a:focus-visible {
+    outline: 3px solid #a13722;
+    outline-offset: 4px;
+  }
+  body {
+    margin: 0;
+    background-color: #f1ece8;
+    color: #282727;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  small,
+  figcaption {
+    font-size: 0.875rem;
+  }
+  .container {
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+}
+@layer components {
+  .site-header, .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+  .site-header__brand, .site-footer__brand {
+    color: #282727;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .site-header__nav ul,
+  .site-footer__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .site-header__nav a,
+  .site-footer__nav a {
+    color: #282727;
+    text-decoration: none;
+  }
+  .site-header__nav a:hover,
+  .site-footer__nav a:hover {
+    text-decoration: underline;
+  }
+  .hero {
+    padding-block: 4rem;
+    color: white;
+    background-image: url("../assets/images/hero_mountain.png");
+    background-color: rgba(0, 0, 0, 0.35);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    min-height: 25rem;
+  }
+  .hero__title {
+    margin: 0 0 0.5rem;
+  }
+  .hero p {
+    max-width: 40ch;
+    margin: 0.5rem 0;
+  }
+  .culture {
+    padding-block: 2rem 4rem;
+  }
+  .culture h2 {
+    margin-top: 0;
+  }
+  .culture__audio {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .music {
+    padding-block: 2rem 4rem;
+    container-type: inline-size;
+  }
+  .music h2 {
+    color: #a13722;
+  }
+  .story-card {
+    display: grid;
+    gap: 2rem;
+  }
+  .story-card__figure, .landscapes__figure {
+    margin: 0;
+  }
+  .story-card__figure img {
+    width: 100%;
+  }
+  .story-card__content {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  .story-card__content .button {
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  .story-card__content h3 {
+    margin-top: 0;
+  }
+  @container (min-width: 40rem) {
+    .story-card {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #a13722;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .button:hover {
+    text-decoration: underline;
+  }
+  .landscapes {
+    padding-bottom: 4rem;
+  }
+  .landscapes h2 {
+    color: #a13722;
+  }
+  .landscapes__figure img {
+    width: 100%;
+  }
+  .landscapes__figure figcaption {
+    margin-top: 0.5rem;
+  }
+  .story-intro {
+    padding-block: 4rem;
+  }
+  .video-section {
+    container-type: inline-size;
+    padding-block: 2rem 4rem;
+  }
+  .video-section h2 {
+    color: #a13722;
+  }
+  .story__video {
+    aspect-ratio: 16/9;
+    align-self: start;
+  }
+  .story__video iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .story-card__description {
+    max-height: 12rem;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+  .story-card__description:focus-visible {
+    outline: 3px solid #a13722;
+    outline-offset: 2px;
+  }
+  .story-card__details {
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #a13722;
+    color: #a13722;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    background-color: #a13722;
+    color: white;
+  }
+  .about {
+    max-width: 55rem;
+    padding-bottom: 4rem;
+  }
+  .culture__transcript {
+    margin-top: 1.5rem;
+  }
+  .culture__transcript summary {
+    cursor: pointer;
+    color: #a13722;
+    text-decoration: underline;
+  }
+  .culture__transcript summary:focus-visible {
+    outline: 3px solid #a13722;
+    outline-offset: 4px;
+  }
+  .culture__transcript-text {
+    padding-block: 1rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
